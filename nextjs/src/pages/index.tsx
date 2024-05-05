@@ -2,6 +2,8 @@ import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.scss'
 import Header from '@/components/Header'
+import FeaturedAuctionCards from '@/components/FeaturedAuctionCards'
+import TokensCategories from '@/components/TokensCategories'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,7 +21,8 @@ export default function Home() {
         <Header />
     
         <div className={styles.mainWrapper}>
-          <h1>hello world!</h1>
+          <TokensCategories />
+          <FeaturedAuctionCards />
         </div>
       </main>
     </>
