@@ -1,21 +1,24 @@
 .main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 4rem 6rem;
+  width: 100%;
   min-height: 100vh;
+  margin: 0;
+  padding: 0 2rem;
 
-  h1 {
-
-  }
-
-  h2 {
-    margin-top: 1rem;
-    font-size: 1rem;
-    font-weight: 400;
-  }
-
-  .loginWrapper {
+  .mainWrapper {
     margin-top: 2rem;
+    
+    h1 {
+  
+    }
+  
+    h2 {
+      margin-top: 1rem;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+  
+    .loginWrapper {
+      margin-top: 2rem;
+    }
   }
 }

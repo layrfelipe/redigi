@@ -1,71 +1,11 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.scss'
-import { signOut, useSession } from 'next-auth/react'
-import Login from '@/components/Login'
-import { useEffect } from 'react'
-import axios from 'axios';
+import Header from '@/components/Header'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-  const { data, status } = useSession();
-
-  const createWalletWithLumxProtocol = async() => {
-    const response = await axios.post('https://protocol-sandbox.lumx.io/v2/wallets', {}, {
-      headers: {
-        "Authorization": `Bearer ${process.env.NEXT_PUBLIC_LUMX_API_KEY}`
-      }
-    })
-    return response
-  }
-
-  const saveWallet = async (mail: string, walletId: string, walletAddress: string) => {
-    try {
-      const response = await axios.post('/api/saveWallet', {
-        mail,
-        walletId,
-        walletAddress
-      });
-      return response;
-    } catch (error) {
-      console.error('Error on authentication:', error);
-    }
-  };
-
-  const isUserRegistered = async (mail: string) => {
-    try {
-      const response = await axios.get(`/api/isUserRegistered?mail=${mail}`);
-      return response
-    } catch (error) {
-      console.error('Error saving wallet:', error);
-    }
-  };
-  
-  const handleSignOut = async () => {
-    await signOut()
-  }
-  
-  useEffect(() => {
-    if (status === 'authenticated') {
-      const mail = data.user!.email;
-
-      isUserRegistered(mail!).then((response: any) => {
-        const userExists = response.data.exists
-        if (!userExists) {
-          createWalletWithLumxProtocol().then((response: any) => {
-            const walletId = response.data.id;
-            const walletAddress = response.data.address;
-            saveWallet(mail!, walletId, walletAddress);
-          })
-        }
-        else {
-          // busca os nfts dessa carteira para listar
-        }
-      });
-    }
-  }, [status])
-  
   return (
     <>
       <Head>
@@ -76,38 +16,12 @@ export default function Home() {
       </Head>
       
       <main className={`${styles.main} ${inter.className}`}>
+        <Header />
     
-        {status === 'loading' &&
-          <>
-            <h1> loading... please wait</h1>;
-          </>
-        }
-
-        {status === 'authenticated' &&
-          <>
-            <h1>Welcome to ReDigi Protocol, {data.user?.name}!</h1>
-            <h2>Fractional Ownership, Auction, and Reconstitution of Non-Fungible Tokens</h2>
-    
-            <div className={styles.loginWrapper}>
-              <button onClick={handleSignOut}>Sign out</button>
-            </div>
-          </>
-        }
-        
-        {status === 'unauthenticated' &&
-          <>
-            <Login />
-          </>
-        }
+        <div className={styles.mainWrapper}>
+          <h1>hello world!</h1>
+        </div>
       </main>
     </>
   )
-}
-
-export function getServersideProps(){
-  return {
-    props: {
-      session: "// define logic to get user session here, this will be part of pageProps in _app.js"
-    }
-  }
 }
