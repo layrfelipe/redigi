@@ -5,22 +5,29 @@ import { signOut, useSession } from 'next-auth/react'
 import Login from '@/components/Login'
 import { useEffect } from 'react'
 import axios from 'axios';
-import type { NextApiResponse } from 'next';
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   const { data, status } = useSession();
 
-  const walletId = "12345678";
+  const createWalletWithLumxProtocol = async() => {
+    const response = await axios.post('https://protocol-sandbox.lumx.io/v2/wallets', {}, {
+      headers: {
+        "Authorization": `Bearer ${process.env.NEXT_PUBLIC_LUMX_API_KEY}`
+      }
+    })
+    return response
+  }
 
-  const saveWallet = async (mail: string) => {
+  const saveWallet = async (mail: string, walletId: string, walletAddress: string) => {
     try {
       const response = await axios.post('/api/saveWallet', {
         mail,
-        walletId
+        walletId,
+        walletAddress
       });
-      console.log('Response:', response.data);
+      return response;
     } catch (error) {
       console.error('Error on authentication:', error);
     }
@@ -46,7 +53,12 @@ export default function Home() {
       isUserRegistered(mail!).then((response: any) => {
         const userExists = response.data.exists
         if (!userExists) {
-          saveWallet(mail!);
+          createWalletWithLumxProtocol().then((response: any) => {
+            console.log(response)
+            const walletId = response.data.id;
+            const walletAddress = response.data.address;
+            saveWallet(mail!, walletId, walletAddress);
+          })
         }
       });
     }

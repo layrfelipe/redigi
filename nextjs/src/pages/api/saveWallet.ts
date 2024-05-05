@@ -18,11 +18,11 @@ export default async function handler(
     
     await connectDB();
     
-    const { mail, walletId } = req.body;
+    const { mail, walletId, walletAddress } = req.body;
     
-    const existingUser = await User.findOne({ $or: [{ mail }, { walletId }] });
+    const existingUser = await User.findOne({ $or: [{ mail }, { walletId }, { walletAddress }] });
     if (!existingUser) {
-        const newUser = new User({ mail, walletId });
+        const newUser = new User({ mail, walletId, walletAddress });
         await newUser.save();
     }
 
