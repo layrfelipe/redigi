@@ -59,6 +59,9 @@ export default function Home() {
             saveWallet(mail!, walletId, walletAddress);
           })
         }
+        else {
+          // busca os nfts dessa carteira para listar
+        }
       });
     }
   }, [status])
