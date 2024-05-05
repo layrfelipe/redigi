@@ -54,7 +54,6 @@ export default function Home() {
         const userExists = response.data.exists
         if (!userExists) {
           createWalletWithLumxProtocol().then((response: any) => {
-            console.log(response)
             const walletId = response.data.id;
             const walletAddress = response.data.address;
             saveWallet(mail!, walletId, walletAddress);
