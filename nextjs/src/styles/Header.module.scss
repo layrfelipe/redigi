@@ -10,6 +10,7 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        width: 50%;
 
         .imageWrapper {
             width: 15%;
@@ -24,12 +25,13 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
+        width: 50%;
 
         button {
             background: #00FFB2;
             border: none;
             border-radius: .25rem;
-            padding: .5rem 2rem;
+            padding: .5rem;
             margin-left: 1rem;
             cursor: pointer;
             font-size: 1rem;

@@ -44,15 +44,25 @@
                     flex-direction: column;
                     align-items: flex-start;
                     margin-right: .5rem;
-                    padding: .25rem;
+                    padding: .5rem;
                     
                     span {
                         color: white;
                     }
     
                     .spanHeader {
-                        font-size: .6rem;
+                        font-size: .65rem;
                         margin-bottom: .25rem;
+                        font-weight: 600;
+                    }
+
+                    .started {
+                        color: #00FFB2;
+
+                    }
+
+                    .pending {
+                        color: #FFC700;
                     }
                 }
             }

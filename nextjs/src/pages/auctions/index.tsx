@@ -19,7 +19,7 @@ export default function Auctions() {
         <Header />
     
         <div className={styles.mainWrapper}>
-          
+          <h1>Auctions</h1>
         </div>
       </main>
     </>

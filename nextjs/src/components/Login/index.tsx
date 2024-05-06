@@ -63,7 +63,7 @@ export default function Login() {
               })
             }
             else {
-              // busca os nfts dessa carteira para listar
+              // buscaria os nfts dessa carteira para listar, porem esta com bug no protocolo da Lumx
               setWalletAddress(response.data.walletAddress)
             }
           });
