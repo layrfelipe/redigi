@@ -3,22 +3,23 @@
   min-height: 100vh;
   margin: 0;
   padding: 0 2rem;
+  padding-bottom: 4rem;
 
   .mainWrapper {
     margin-top: 2rem;
+    width: 100%;
     
-    h1 {
-  
+    .featured {
+      width: 100%;
     }
-  
-    h2 {
-      margin-top: 1rem;
-      font-size: 1rem;
-      font-weight: 400;
-    }
-  
-    .loginWrapper {
-      margin-top: 2rem;
+    
+    .trendsWrapper {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      column-gap: 2rem;
+      margin-top: 3rem;
     }
   }
 }

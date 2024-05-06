@@ -4,6 +4,7 @@ import styles from '@/styles/Home.module.scss'
 import Header from '@/components/Header'
 import FeaturedAuctionCards from '@/components/FeaturedAuctionCards'
 import TokensCategories from '@/components/TokensCategories'
+import TrendingList from '@/components/TrendingList'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,8 +22,15 @@ export default function Home() {
         <Header />
     
         <div className={styles.mainWrapper}>
-          <TokensCategories />
-          <FeaturedAuctionCards />
+          <div className={styles.featured}>
+            <TokensCategories />
+            <FeaturedAuctionCards />
+          </div>
+
+          <div className={styles.trendsWrapper}>
+            <TrendingList listType="auction" />
+            <TrendingList listType="slices" />
+          </div>
         </div>
       </main>
     </>

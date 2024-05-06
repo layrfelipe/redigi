@@ -22,7 +22,7 @@ export default function Header() {
                 </div>
 
                 <div className={styles.headerRightSide}>
-                    <button id={styles.sellNFTButton}>Sell an NFT</button>
+                    <button id={styles.sellNFTButton}>Slice your NFT</button>
                     <Login />
                 </div>
             </header>
