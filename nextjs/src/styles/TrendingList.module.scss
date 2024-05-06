@@ -38,9 +38,16 @@
                 background: #00FFB2;
                 border: none;
                 border-radius: .25rem;
-                padding: .5rem 1rem;
+                padding: .5rem;
                 margin-left: 1rem;
                 cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .bidIcon {
+                    margin-left: .5rem;
+                }
             }
         }
 

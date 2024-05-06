@@ -22,6 +22,18 @@
             align-items: center;
             text-align: center;
 
+            .live {
+                color: #00FFB2;
+            }
+
+            .pending {
+                color: #FFC700;
+            }
+
+            .closed {
+                color: #FF542E;
+            }
+
             .imageWrapper {
                 width: 100%;
 
@@ -42,12 +54,27 @@
             }
 
             button {
-                background: #00FFB2;
                 border: none;
                 border-radius: .25rem;
                 padding: .5rem 1rem;
                 margin-left: 1rem;
                 cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .burnBtn {
+                background: #FF542E;
+                color: white;
+            }
+            
+            .seeAuctionBtn {
+                background: #00FFB2;
+            }
+
+            .auctionActionIcon {
+                margin-left: .5rem;
             }
         }
     }

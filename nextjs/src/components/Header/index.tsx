@@ -16,7 +16,7 @@ export default function Header() {
                     <div className={styles.links}>
                         <Link href="/">Home</Link>
                         <Link href="/auctions">Auctions</Link>
-                        <Link href="/slices">My Slices</Link>
+                        <Link href="/mySlices">My Slices</Link>
                         <Link href="/myNFTs">My NFTs</Link>
                     </div>
                 </div>
