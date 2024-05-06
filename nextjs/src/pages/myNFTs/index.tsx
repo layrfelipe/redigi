@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
-import styles from '@/styles/MySlices.module.scss'
+import styles from '@/styles/MyNFTs.module.scss'
 import Header from '@/components/Header'
+import MyNFTsList from '@/components/MyNFTsList'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,7 +20,11 @@ export default function MyNFTs() {
         <Header />
     
         <div className={styles.mainWrapper}>
-          
+          <h1>My NFTs</h1>
+
+          <div className={styles.nfts}>
+            <MyNFTsList />
+          </div>
         </div>
       </main>
     </>
