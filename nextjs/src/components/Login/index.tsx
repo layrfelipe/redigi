@@ -7,6 +7,7 @@ export default function Login() {
     const { data, status } = useSession();
 
     const [walletAddress, setWalletAddress] = useState("")
+    const [fullWalletAddressVisibility, setFullWalletAddressVisibility] = useState(false)
 
     const handleSignIn = () => {
         signIn()
@@ -81,8 +82,15 @@ export default function Login() {
             <>
               <button onClick={handleSignOut}>Sign out</button>
               <div id={styles.walletAddressWrapper}>
-                <span>Lumx Wallet Address</span>
-                <span>{walletAddress.slice(0, 5)}...{walletAddress.slice(39, 42)}</span>
+                <span id={styles.littleHeader}>Lumx Wallet Address</span>
+
+                {!fullWalletAddressVisibility &&
+                  <span className={styles.address} onClick={() => setFullWalletAddressVisibility(true)}>{walletAddress.slice(0, 5)}...{walletAddress.slice(39, 42)}</span>
+                }
+
+                {fullWalletAddressVisibility &&
+                  <span className={styles.address} onClick={() => setFullWalletAddressVisibility(false)}>{walletAddress}</span>
+                }
               </div>
             </>
         }

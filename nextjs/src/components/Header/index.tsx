@@ -9,14 +9,14 @@ export default function Header() {
                 <div className={styles.headerLeftSide}>
                     <div className={styles.imageWrapper}>
                         <Link href="/">
-                            <img className={styles.logoImage} src="/logo-redigi.png" />
+                            <img className={styles.logoImage} src="/redigi-logo.png" />
                         </Link>
                     </div>
 
                     <div className={styles.links}>
                         <Link href="/">Home</Link>
                         <Link href="/auctions">Auctions</Link>
-                        <Link href="/slices">Slices</Link>
+                        <Link href="/slices">My Slices</Link>
                         <Link href="/myNFTs">My NFTs</Link>
                     </div>
                 </div>

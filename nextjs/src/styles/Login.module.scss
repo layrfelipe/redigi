@@ -4,4 +4,14 @@
     align-items: center;
     justify-content: center;
     margin-left: 1rem;
+    text-align: center;
+    
+    #littleHeader {
+        font-size: .6rem;
+        margin-bottom: .5rem;
+    }
+
+    .address {
+        cursor: pointer;
+    }
 }
