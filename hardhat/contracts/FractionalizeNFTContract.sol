@@ -74,6 +74,8 @@ contract FractionalizeNFT is Ownable {
         token.transferFrom(msg.sender, address(this), amount);
         uint256 totalSupply = token.totalSupply();
         token.burn(amount); // Burn the tokens
+        
+        //collected amount will come from auction logic, not implemented yet
         uint256 payout = (createdTokens[erc20Address].collectedAmount * amount) / totalSupply;
         (bool sent, bytes memory data) = msg.sender.call{value: payout}("");
         require(sent, "Failed to send Ether");
