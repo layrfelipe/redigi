@@ -1,7 +1,7 @@
-# ReDigi - Protocolo de Fractionalization para Ativos NFT
+# ReDigi - Protocolo para Fracionamento de NFTs de Utilidade
 
 ## Visão Geral:
-O ReDigi é um protocolo desenvolvido para facilitar o fracionamento e reintegração de ativos não fungíveis (NFTs) de utilidade, permitindo a divisão da propriedade desses ativos em partes menores representadas por tokens fungíveis (ERC20). Este repositório contém a implementação do Protocolo ReDigi, incluindo os contratos na pasta `hardhat` e o frontend na pasta `nextjs`.
+O ReDigi é um protocolo desenvolvido para facilitar o fracionamento e reintegração de ativos não fungíveis (NFTs) de utilidade, permitindo a divisão da propriedade desses ativos em partes menores representadas por tokens fungíveis (ERC20) e sua posterior reintegração. Este repositório contém a implementação do Protocolo ReDigi, incluindo os contratos na pasta `hardhat` e o frontend na pasta `nextjs`.
 
 ## Estrutura do Repositório:
 - **hardhat**: Contém os contratos inteligentes do Protocolo ReDigi desenvolvidos na plataforma Hardhat.
