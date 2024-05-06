@@ -6,6 +6,7 @@ type Data = {
     status?: string,
     message?: string,
     exists?: boolean
+    walletAddress?: string
 }
 
 export default async function handler(
@@ -26,5 +27,5 @@ export default async function handler(
         res.status(200).json({ status: "success", exists: false });
     }
 
-    res.status(200).json({ status: "success", exists: true });
+    res.status(200).json({ status: "success", exists: true, walletAddress: existingUser.walletAddress });
 }

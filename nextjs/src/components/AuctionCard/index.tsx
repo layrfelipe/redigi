@@ -1,11 +1,11 @@
 import styles from "@/styles/AuctionCard.module.scss";
 
-export default function AuctionCard() {
+export default function AuctionCard({ imagePath }: any) {
     return(
         <>
             <div className={styles.auctionCardWrapper}>
                 <div className={styles.imageWrapper}>
-                    <img src={"/sneaker.png"} />
+                    <img src={`/${imagePath}.png`} />
 
                     <div className={styles.infoWrapper}>
                         <div className={styles.infoOnTop}>

@@ -1,9 +1,12 @@
 import { signIn, signOut, useSession } from 'next-auth/react'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import axios from "axios";
+import styles from "@/styles/Login.module.scss"
 
 export default function Login() {
     const { data, status } = useSession();
+
+    const [walletAddress, setWalletAddress] = useState("")
 
     const handleSignIn = () => {
         signIn()
@@ -54,11 +57,13 @@ export default function Login() {
               createWalletWithLumxProtocol().then((response: any) => {
                 const walletId = response.data.id;
                 const walletAddress = response.data.address;
+                setWalletAddress(walletAddress)
                 saveWallet(mail!, walletId, walletAddress);
               })
             }
             else {
               // busca os nfts dessa carteira para listar
+              setWalletAddress(response.data.walletAddress)
             }
           });
         }
@@ -73,7 +78,13 @@ export default function Login() {
 
         {
             status === 'authenticated' &&
-            <button onClick={handleSignOut}>Sign out</button>
+            <>
+              <button onClick={handleSignOut}>Sign out</button>
+              <div id={styles.walletAddressWrapper}>
+                <span>Lumx Wallet Address</span>
+                <span>{walletAddress.slice(0, 5)}...{walletAddress.slice(39, 42)}</span>
+              </div>
+            </>
         }
         </>
     )

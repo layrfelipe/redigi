@@ -5,10 +5,10 @@ export default function FeaturedAuctionCards() {
     return(
         <>
             <div className={styles.featuredAuctionCardsWrapper}>
-                <AuctionCard />
-                <AuctionCard />
-                <AuctionCard />
-                <AuctionCard />
+                <AuctionCard imagePath="sneaker"/>
+                <AuctionCard imagePath="sneaker2"/>
+                <AuctionCard imagePath="sneaker3"/>
+                <AuctionCard imagePath="sneaker4"/>
             </div>
         </>
     )
