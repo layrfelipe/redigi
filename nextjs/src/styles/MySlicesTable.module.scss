@@ -1,0 +1,54 @@
+.slicesTableWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 2rem;
+    
+    .tableRow {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        column-gap: 1.5rem;
+        width: 100%;
+        margin-top: 2rem;
+        border-top: 1px solid #484848;
+        padding-top: 1rem;
+
+        .tableData {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            .imageWrapper {
+                width: 100%;
+
+                img {
+                    width: 50%;
+                }
+            }
+
+            .spanHeader {
+                font-size: .7rem;
+                font-weight: 300;
+                margin-bottom: .5rem;
+                color: #a3a3a3;
+            }
+
+            .tokenName {
+                text-align: left;
+            }
+
+            button {
+                background: #00FFB2;
+                border: none;
+                border-radius: .25rem;
+                padding: .5rem 1rem;
+                margin-left: 1rem;
+                cursor: pointer;
+            }
+        }
+    }
+}
