@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import User from "@/models/User";
-import connectDB from "../lib/db";
+import connectDB from "@/lib/db";
 
 type Data = {
     status: string,
